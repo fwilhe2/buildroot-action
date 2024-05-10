@@ -17,5 +17,5 @@ runs:
           BR2_TARGET_ROOTFS_OCI_ARCHIVE=y
           EOF
           make
-          sudo tar cf output.tar output/
+          sudo tar cf output.tar output/images/
       shell: bash
