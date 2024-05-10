@@ -10,5 +10,11 @@ runs:
           cd buildroot-2024.02
           pwd
           make defconfig
+          cat <<EOF >> .config
+          BR2_TARGET_ROOTFS_OCI=y
+          BR2_TARGET_ROOTFS_OCI_ENTRYPOINT="df"
+          BR2_TARGET_ROOTFS_OCI_CMD="-h"
+          BR2_TARGET_ROOTFS_OCI_ARCHIVE=y
+          EOF
           make
       shell: bash
