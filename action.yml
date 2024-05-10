@@ -1,0 +1,14 @@
+name: 'Buildroot'
+description: 'Greet someone'
+runs:
+  using: "composite"
+  steps:
+    - name: Run
+      run: |
+          wget https://buildroot.org/downloads/buildroot-2024.02.tar.xz
+          tar xf buildroot-2024.02.tar.xz
+          cd buildroot-2024.02
+          pwd
+          make defconfig
+          make
+      shell: bash
